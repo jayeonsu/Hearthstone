@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{57C1983A-EEEB-4E00-BA83-2642CDFF73D8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hearthstone.Domain</RootNamespace>
+    <AssemblyName>Hearthstone.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EventHandlers\PlayerEventHandler.cs" />
+    <Compile Include="Cards\CardAbility.cs" />
+    <Compile Include="Cards\CardType.cs" />
+    <Compile Include="Cards\Implementations\BearTrapCard.cs" />
+    <Compile Include="Cards\Implementations\FireballCard.cs" />
+    <Compile Include="Cards\Implementations\GadgetzanAuctioneerCard.cs" />
+    <Compile Include="Cards\Implementations\RazorfenHunterCard.cs" />
+    <Compile Include="Cards\Implementations\UnleashtheHoundsCard.cs" />
+    <Compile Include="Characters\Character.cs" />
+    <Compile Include="BattleFields\BattleField.cs" />
+    <Compile Include="Cards\Card.cs" />
+    <Compile Include="Characters\Events\HealedEvent.cs" />
+    <Compile Include="Characters\Events\FoughtEvent.cs" />
+    <Compile Include="Characters\Events\DiedEvent.cs" />
+    <Compile Include="Characters\Events\UnfreezedEvent.cs" />
+    <Compile Include="Characters\Events\FreezedEvent.cs" />
+    <Compile Include="Characters\Events\DamagedEvent.cs" />
+    <Compile Include="Characters\Health.cs" />
+    <Compile Include="Characters\Heroes\Weapons\Weapon.cs" />
+    <Compile Include="Characters\Minions\Implementations\AbominationMinion.cs" />
+    <Compile Include="Characters\Minions\Implementations\BoarMinion.cs" />
+    <Compile Include="Characters\Minions\Events\DivineShieldUnattachedEvent.cs" />
+    <Compile Include="Characters\Minions\Events\DivineShieldAttachedEvent.cs" />
+    <Compile Include="Characters\Minions\Implementations\GadgetzanAuctioneerMinion.cs" />
+    <Compile Include="Characters\Minions\Implementations\HoundMinion.cs" />
+    <Compile Include="Characters\Minions\Implementations\IronfurGrizzlyMinion.cs" />
+    <Compile Include="Characters\Minions\Implementations\JunglePantherMinion.cs" />
+    <Compile Include="Characters\Minions\Implementations\RazorfenHunterMinion.cs" />
+    <Compile Include="Histories\HistoryStore.cs" />
+    <Compile Include="Players\Events\PlayerCardUsedEvent.cs" />
+    <Compile Include="Players\Events\PlayerCardDrawnEvent.cs" />
+    <Compile Include="Players\Events\MinionPlacedEvent.cs" />
+    <Compile Include="Players\Events\PlayerTurnEndedEvent.cs" />
+    <Compile Include="Helpers\Messaging\DomainEvent.cs" />
+    <Compile Include="EventHandlers\HistoryHandler.cs" />
+    <Compile Include="Helpers\Messaging\DomainEvents.cs" />
+    <Compile Include="Helpers\Messaging\IHandle.cs" />
+    <Compile Include="Histories\IHistoryStore.cs" />
+    <Compile Include="Players\Player.cs" />
+    <Compile Include="Characters\Heroes\Hero.cs" />
+    <Compile Include="Characters\Heroes\HeroPowers\HeroPower.cs" />
+    <Compile Include="Players\Mana.cs" />
+    <Compile Include="Characters\Minions\Minion.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
